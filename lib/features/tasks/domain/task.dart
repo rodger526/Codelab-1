@@ -19,6 +19,8 @@ class Task {
   final TaskStatus status;
   final String userId;
 
+  bool get isCompleted => status == TaskStatus.completada;
+
   factory Task.fromJson(Map<String, dynamic> json) {
     return Task(
       id: json['id'] as int,
@@ -40,6 +42,4 @@ class Task {
       'userId': userId,
     };
   }
-
-  bool get isCompleted => status == TaskStatus.completada;
 }
